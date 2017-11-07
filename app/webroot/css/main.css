@@ -1,0 +1,22 @@
+.index > h1 {
+    font-size: 2.0em;
+}
+.post {
+    padding:1.5em;
+}
+.post > small {
+    font-size: 1em;
+}
+
+.post > div {
+    font-size: 1.1em;
+    width: 100%;
+    margin-bottom: 0.4em;
+}
+
+.post > .preview {
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+

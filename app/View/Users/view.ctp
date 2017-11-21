@@ -21,25 +21,25 @@
         <div class="post">
             <h2>
             <?php echo $this->Html->link(
-                h($post['title']),
-                    array('controller' => 'posts', 'action' => 'view', $post['id'])
+                h($post['Post']['title']),
+                    array('controller' => 'posts', 'action' => 'view', $post['Post']['id'])
                 );
             ?>
             </h2>
             <div class="preview">
-                <?php echo h($post['body']); ?>
+                <?php echo h($post['Post']['body']); ?>
             </div>
             <small>
-                Created on <?php echo $post['created']; ?>
+                Created on <?php echo $post['Post']['created']; ?>
                 <?php
                 echo $this->Html->link(
                     'Edit',
-                    array('controller' => 'posts', 'action' => 'edit', $post['id'])
+                    array('controller' => 'posts', 'action' => 'edit', $post['Post']['id'])
                 );
                 echo ' ';
                 echo $this->Form->postLink(
                     'Delete',
-                    array('controller' => 'posts', 'action' => 'delete', $post['id']),
+                    array('controller' => 'posts', 'action' => 'delete', $post['Post']['id']),
                     array('confirm' => 'Are you sure?')
                 );
                 ?>

@@ -62,7 +62,7 @@ class UsersController extends AppController {
         $this->User->recursive = 0;
         $users = $this->paginate();
         for($i = 0; $i < count($users); $i++) {
-            $count = count($this->Post->findByUserId($users[$i]['User']['id']));
+            $count = count($this->Post->findAllByUserId($users[$i]['User']['id']));
             $users[$i]['User']['post_count'] = $count;
         }
         $this->set('users', $users);
@@ -74,7 +74,7 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Invalid user'));
         }
         $this->set('user', $this->User->findById($id));
-        $this->set('posts', $this->Post->findByUserId($id));
+        $this->set('posts', $this->Post->findAllByUserId($id));
         if($this->request->is('post')) {
             $this->User->create();
             if($this->User->save($this->request->data)) {
